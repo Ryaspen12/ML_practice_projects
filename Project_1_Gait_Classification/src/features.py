@@ -1,6 +1,5 @@
 import pandas as pd 
-import numpy as np 
-
+import numpy as np
 
 def get_window_label(window):
     return window["activity"].mode()[0]
