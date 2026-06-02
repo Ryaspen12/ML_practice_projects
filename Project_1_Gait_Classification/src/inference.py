@@ -28,9 +28,9 @@ def predict_activity(model, encoder, feature_order, window):
     encoded_label = model.predict(features_df)[0]
     activity_label = encoder.inverse_transform([encoded_label])[0] # inverse back to original label
     # I may need to map the encoder output back to the original activity labels using the ACTIVITY_LABEL_MAP
-    activity_name = ACTIVITY_LABEL_MAP.get(activity_name, activity_label)
+    activity_name = ACTIVITY_LABEL_MAP.get(activity_label, activity_label)
     
-    return activity_label
+    return activity_name
 
 def predict_dataframe(df):
     """Predict activity labels for each window in the DataFrame."""
